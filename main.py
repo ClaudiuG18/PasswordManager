@@ -26,7 +26,15 @@ l_email_username.grid(column=0, row=2)
 l_password = Label(text="Password:")
 l_password.grid(column=0, row=3, sticky="w")
 
+#Entry
+e_website = Entry(width=35)
+e_website.grid(column=1, row=1, columnspan=2)
 
+e_email_username = Entry(width=35)
+e_email_username.grid(column=1, row=2, columnspan=2)
+
+e_password = Entry(width=21)
+e_password.grid(column=1, row=3, columnspan=1,sticky="w")
 
 
 
