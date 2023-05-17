@@ -2,6 +2,7 @@ from tkinter import *
 import secrets
 import pyperclip
 
+#Global variables
 username = ""
 password = ""
 website  = ""
@@ -9,7 +10,9 @@ flag = 0
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_password():
-    list1 = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","!","$","%","&","/","(",")","=","?","'","#","[","]","*","<",">","@"]
+    list1 = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t",
+             "u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T",
+             "U","V","W","X","Y","Z","!","$","%","&","/","(",")","=","?","'","#","[","]","*","<",">","@"]
     password = "".join(secrets.choice(list1) for i in range(18))
     e_password.insert(0, password)
     pyperclip.copy(password)
