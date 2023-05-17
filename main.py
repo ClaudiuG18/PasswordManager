@@ -4,12 +4,16 @@ import secrets
 username = ""
 password = ""
 website  = ""
+flag = 0
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_password():
-    list1 = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","!","§","$","%","&","/","(",")","=","?","'","#"]
-    password = ''.join(secrets.choice(list1) for i in range(30))
+    list1 = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","!","$","%","&","/","(",")","=","?","'","#"]
+    password = "".join(secrets.choice(list1) for i in range(10))
     e_password.insert(0, password)
-    
+    global flag
+    flag +=1
+    if flag % 2 == 0:
+        e_password.delete(0,END)
     
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def clear_text():
@@ -19,7 +23,7 @@ def clear_text():
 def save_data():
     add_button_used()
     f = open("database.txt","a")
-    f.write(website + ";" + username + ";" + password + ";"+"\n")
+    f.write(website + "; " + username + "; " + password + ";"+"\n")
     f.close()
     clear_text()
     
