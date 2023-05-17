@@ -1,9 +1,16 @@
 from tkinter import *
+import secrets
+
 username = ""
 password = ""
 website  = ""
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
-
+def generate_password():
+    list1 = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","!","§","$","%","&","/","(",")","=","?","'","#"]
+    password = ''.join(secrets.choice(list1) for i in range(30))
+    e_password.insert(0, password)
+    
+    
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def clear_text():
    e_password.delete(0, END)
@@ -60,7 +67,7 @@ def add_button_used():
     password = e_password.get()
     
 #Buttons
-b_generate_password = Button(text="Generate Password", width=30)
+b_generate_password = Button(text="Generate Password", width=30, command=generate_password)
 b_generate_password.grid(column=1, row=4, columnspan=2, pady=10)
 
 b_add = Button(text="Add", width=30, command=save_data)
