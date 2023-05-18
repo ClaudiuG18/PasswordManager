@@ -1,6 +1,7 @@
 from tkinter import *
 import secrets
 import pyperclip
+from login.py import *
 
 #Global variables
 username = ""
@@ -36,9 +37,9 @@ def save_data():
 
 # ---------------------------- UI SETUP ------------------------------- #
 
-window = Tk()
-window.title("Password Manager")
-window.config(padx=20,pady=20)
+window1 = Tk()
+window1.title("Password Manager")
+window1.config(padx=20,pady=20)
 
 #Canvas
 canvas = Canvas(height=200, width=200)
@@ -84,4 +85,4 @@ b_add = Button(text="Add", width=30, command=save_data)
 b_add.grid(column=1, row=5, columnspan=2)
 
 
-window.mainloop()
+window1.mainloop()
