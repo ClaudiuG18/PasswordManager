@@ -1,7 +1,7 @@
 from tkinter import *
 import secrets
 import pyperclip
-from login.py import *
+
 
 #Global variables
 username = ""

@@ -2,6 +2,7 @@ from tkinter import *
 import secrets
 import pyperclip
 
+
 #Global variables
 username = ""
 password = ""
@@ -10,7 +11,7 @@ password = ""
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def clear_text():
    e_password.delete(0, END)
-   e_website.delete(0,END)
+  
    
 
 # ---------------------------- UI SETUP ------------------------------- #
