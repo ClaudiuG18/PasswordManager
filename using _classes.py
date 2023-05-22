@@ -24,6 +24,7 @@ class LoginWindow(Tk):
         LoginFrame(self).grid(row=0, column=0, padx=50, pady=150)
         FirstTimeLoginFrame(self).grid(row=0, column=0)
 
+
 class FirstTimeLoginFrame(ttk.Frame):
     def __init__(self, container):
         super().__init__(container)
@@ -32,6 +33,7 @@ class FirstTimeLoginFrame(ttk.Frame):
         def login_button_used():
             if self.create_password_input.get() == self.password_input.get():
                  messagebox.showinfo("Password created successfully!", "Password created successfully!")
+                 self.destroy()
             else:
                 messagebox.showerror("Passwords do not match!", "Passwords do not match!")     
        
@@ -40,6 +42,7 @@ class FirstTimeLoginFrame(ttk.Frame):
         self.password_input = StringVar()
        
         #creating widgets
+        info_label = ttk.Label(self, font=("arial",20,"bold"),text="Please create a password")
         create_password_label = ttk.Label(self, text="Create a main password")
         repeat_password_label = ttk.Label(self, text="Repeat password")
         create_password_entry = ttk.Entry(self, textvariable=self.create_password_input)
@@ -48,11 +51,12 @@ class FirstTimeLoginFrame(ttk.Frame):
         
         
         #placing widgets on the window
+        info_label.grid(row=0,column=0, columnspan=3, padx=5, pady=5)
         create_password_label.grid(row= 1, column=0, padx=10, pady=10)
         repeat_password_label.grid(row= 2, column=0, padx=10, pady=10)
         create_password_entry.grid(row= 1, column=1, padx=10, pady=10)
         repeat_password_entry.grid(row= 2, column=1, padx=10, pady=10)
-        login_button.grid(row=3, column=1, padx=10, pady=10)
+        login_button.grid(row=3, column=1,  padx=10, pady=10)
         
        
         
